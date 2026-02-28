@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Player
 
 @export var speed = 300.0
 
@@ -29,3 +30,9 @@ func _input(_event: InputEvent) -> void:
 				match body.triggerEvent:
 					"Firewall":
 						$Minigames/Firewall.show()
+						await $Minigames/Firewall.done
+						body.queue_free()
+					"Alfie":
+						$Minigames/Alfie.show()
+						await $Minigames/Alfie.done
+						body.queue_free()

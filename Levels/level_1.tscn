@@ -20,7 +20,8 @@ position = Vector2(576, 324)
 position = Vector2(376, 567)
 script = ExtResource("2_dilhk")
 displayName = "Alfie Barlow"
-dialogue = ["Hello. I is Alfie.", "I like stealing microphone from Will.", "My name is Barslow cause I set the bar low. So low it is *beneath the surface*. Get it... the theme... you know... yeah..."]
+dialogue = ["Hello. I is Alfie.", "I like stealing microphone from Will.", "My name is Barslow cause I set the bar low. So low it is *beneath the surface*. Get it... the theme... you know... yeah...", "You must be that good fella who would never hide their true personality *beneath the surface*."]
+triggerEvent = "Alfie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Alfie" unique_id=1388088041]
 position = Vector2(200, -15.5)

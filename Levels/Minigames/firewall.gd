@@ -1,5 +1,7 @@
 extends Panel
 
+signal done
+
 @onready var block := $Block
 
 func _physics_process(delta: float) -> void:
@@ -14,6 +16,9 @@ func _on_visibility_changed() -> void:
 		if $ProgressBar.value == 100.0:
 			break
 	hide()
+	done.emit()
 	get_parent().get_parent().find_child("Dialogue").show()
 	get_parent().get_parent().find_child("Dialogue").find_child("Name").text = "??"
-	get_parent().get_parent().find_child("Dialogue").find_child("Text").text = "Ah what a shame. Will's microphone blew up. What a tragic death..."
+	$"../../Dialogue/Text".text = "Ah what a shame. Will's microphone blew up. What a tragic death..."
+	await get_tree().create_timer(5.0).timeout
+	get_parent().get_parent().find_child("Dialogue").hide()

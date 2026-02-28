@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bn48k5f648la8" path="res://Entities/Player/player.gd" id="1_mv1ah"]
 [ext_resource type="Script" uid="uid://cqvmlkcufxpq1" path="res://Levels/Minigames/firewall.gd" id="2_3uyv8"]
+[ext_resource type="Script" uid="uid://cam0wy8pqfoqw" path="res://Entities/enemy.gd" id="3_lu8i8"]
+[ext_resource type="Script" uid="uid://ds4t4ilrfx4cs" path="res://Levels/Minigames/alfie.gd" id="3_tekja"]
 
 [sub_resource type="Gradient" id="Gradient_ix6vc"]
 offsets = PackedFloat32Array(0.38, 1)
@@ -46,6 +48,18 @@ width = 50
 height = 50
 noise = SubResource("FastNoiseLite_3uyv8")
 color_ramp = SubResource("Gradient_mv1ah")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tekja"]
+radius = 20.0
+
+[sub_resource type="Gradient" id="Gradient_5c2io"]
+offsets = PackedFloat32Array(0.4278607, 0.46766168)
+colors = PackedColorArray(0.42745098, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_4wf4l"]
+gradient = SubResource("Gradient_5c2io")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
 
 [node name="Player" type="CharacterBody2D" unique_id=1769892712]
 script = ExtResource("1_mv1ah")
@@ -167,4 +181,23 @@ offset_bottom = 27.0
 grow_horizontal = 2
 show_percentage = false
 
+[node name="Alfie" type="Panel" parent="Minigames" unique_id=1628152159]
+visible = false
+offset_left = -1150.0
+offset_top = -350.0
+offset_right = 1150.0
+offset_bottom = 350.0
+script = ExtResource("3_tekja")
+
+[node name="Enemy" type="Area2D" parent="Minigames/Alfie" unique_id=554397790]
+script = ExtResource("3_lu8i8")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="Minigames/Alfie/Enemy" unique_id=1131066445]
+shape = SubResource("CircleShape2D_tekja")
+
+[node name="Sprite2D" type="Sprite2D" parent="Minigames/Alfie/Enemy" unique_id=322983230]
+texture = SubResource("GradientTexture2D_4wf4l")
+
 [connection signal="visibility_changed" from="Minigames/Firewall" to="Minigames/Firewall" method="_on_visibility_changed"]
+[connection signal="visibility_changed" from="Minigames/Alfie" to="Minigames/Alfie" method="_on_visibility_changed"]
+[connection signal="body_entered" from="Minigames/Alfie/Enemy" to="Minigames/Alfie/Enemy" method="_on_body_entered"]
