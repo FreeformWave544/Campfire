@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Campfire"
-run/main_scene="uid://cn3prioa0h54c"
+run/main_scene="uid://c3giq5ik3ditq"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 boot_splash/bg_color=Color(0.16693062, 0.09505675, 0.2697992, 1)
 boot_splash/image="uid://c8pnd3h7nssdy"
