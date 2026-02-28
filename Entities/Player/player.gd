@@ -35,4 +35,5 @@ func _input(_event: InputEvent) -> void:
 					"Alfie":
 						$Minigames/Alfie.show()
 						await $Minigames/Alfie.done
+						$Minigames/Alfie.hide()
 						body.queue_free()

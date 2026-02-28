@@ -190,6 +190,7 @@ offset_bottom = 350.0
 script = ExtResource("3_tekja")
 
 [node name="Enemy" type="Area2D" parent="Minigames/Alfie" unique_id=554397790]
+top_level = true
 script = ExtResource("3_lu8i8")
 
 [node name="CollisionShape" type="CollisionShape2D" parent="Minigames/Alfie/Enemy" unique_id=1131066445]
@@ -200,4 +201,5 @@ texture = SubResource("GradientTexture2D_4wf4l")
 
 [connection signal="visibility_changed" from="Minigames/Firewall" to="Minigames/Firewall" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Minigames/Alfie" to="Minigames/Alfie" method="_on_visibility_changed"]
+[connection signal="area_entered" from="Minigames/Alfie/Enemy" to="Minigames/Alfie/Enemy" method="_on_area_entered"]
 [connection signal="body_entered" from="Minigames/Alfie/Enemy" to="Minigames/Alfie/Enemy" method="_on_body_entered"]

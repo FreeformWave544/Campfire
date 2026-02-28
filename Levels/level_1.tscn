@@ -20,7 +20,7 @@ position = Vector2(576, 324)
 position = Vector2(376, 567)
 script = ExtResource("2_dilhk")
 displayName = "Alfie Barlow"
-dialogue = ["Hello. I is Alfie.", "I like stealing microphone from Will.", "My name is Barslow cause I set the bar low. So low it is *beneath the surface*. Get it... the theme... you know... yeah...", "You must be that good fella who would never hide their true personality *beneath the surface*."]
+dialogue = Array[String](["Hello. I is Alfie.", "I like stealing microphone from Will. \"I'll drop kick you.\"", "My name is Barslow cause I set the bar low. So low it is *beneath the surface*. Get it... the theme... you know... yeah...", "You must be that good fella who would never hide their true personality *beneath the surface*."])
 triggerEvent = "Alfie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Alfie" unique_id=1388088041]
@@ -37,7 +37,7 @@ centered = false
 position = Vector2(1154, 508)
 script = ExtResource("2_dilhk")
 displayName = "Will Kitch"
-dialogue = ["I is good enough to use mic cause I feel bored and like I actually have any authority.", "\"This is just sad\"", "\"What, gender neutral?\""]
+dialogue = Array[String](["I is good enough to use mic cause I feel bored and like I actually have any authority.", "\"This is just sad\"", "\"What, gender neutral?\""])
 triggerEvent = "Firewall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Will_K" unique_id=1563956839]
