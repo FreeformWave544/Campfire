@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://c6p7akeohr578"]
+
+[ext_resource type="Script" uid="uid://bn48k5f648la8" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+
+[sub_resource type="Gradient" id="Gradient_ix6vc"]
+offsets = PackedFloat32Array(0.38, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_mv1ah"]
+gradient = SubResource("Gradient_ix6vc")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.67236465, 0.22792023)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mv1ah"]
+radius = 21.1
+
+[sub_resource type="Gradient" id="Gradient_3uyv8"]
+offsets = PackedFloat32Array(0.38, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lu8i8"]
+gradient = SubResource("Gradient_3uyv8")
+width = 32
+height = 32
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.67236465, 0.22792023)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ix6vc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1ah"]
+size = Vector2(46, 20)
+
+[node name="Player" type="CharacterBody2D" unique_id=1769892712]
+script = ExtResource("1_mv1ah")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=407779309]
+texture = SubResource("GradientTexture2D_mv1ah")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1269991807]
+shape = SubResource("CircleShape2D_mv1ah")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=992955242]
+process_callback = 0
+position_smoothing_enabled = true
+rotation_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.05
+drag_top_margin = 0.05
+drag_right_margin = 0.05
+drag_bottom_margin = 0.05
+
+[node name="Limbs" type="Area2D" parent="." unique_id=706160628]
+
+[node name="LHand" type="Area2D" parent="Limbs" unique_id=1872318046]
+position = Vector2(-14, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="Limbs/LHand" unique_id=169081684]
+texture = SubResource("GradientTexture2D_lu8i8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limbs/LHand" unique_id=813667386]
+shape = SubResource("CircleShape2D_ix6vc")
+
+[node name="RHand" type="Area2D" parent="Limbs" unique_id=1012931155]
+position = Vector2(14, -23)
+
+[node name="Sprite2D" type="Sprite2D" parent="Limbs/RHand" unique_id=555467167]
+texture = SubResource("GradientTexture2D_lu8i8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limbs/RHand" unique_id=2031723832]
+shape = SubResource("CircleShape2D_ix6vc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Limbs" unique_id=682561499]
+position = Vector2(0, -24)
+shape = SubResource("RectangleShape2D_mv1ah")
