@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c6p7akeohr578"]
 
 [ext_resource type="Script" uid="uid://bn48k5f648la8" path="res://Entities/Player/player.gd" id="1_mv1ah"]
+[ext_resource type="Script" uid="uid://cqvmlkcufxpq1" path="res://Levels/Minigames/firewall.gd" id="2_3uyv8"]
 
 [sub_resource type="Gradient" id="Gradient_ix6vc"]
 offsets = PackedFloat32Array(0.38, 1)
@@ -31,6 +32,20 @@ fill_to = Vector2(0.67236465, 0.22792023)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mv1ah"]
 size = Vector2(46, 20)
+
+[sub_resource type="Gradient" id="Gradient_mv1ah"]
+offsets = PackedFloat32Array(0, 0.36065573, 0.6338798, 1)
+colors = PackedColorArray(0.6509804, 0.32941177, 0.21960784, 1, 0.6117647, 0.28627452, 0.17254902, 1, 0.7921569, 0.4117647, 0.28235295, 1, 0.8352941, 0.44705883, 0.29411766, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_3uyv8"]
+noise_type = 3
+frequency = 0.0741
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lu8i8"]
+width = 50
+height = 50
+noise = SubResource("FastNoiseLite_3uyv8")
+color_ramp = SubResource("Gradient_mv1ah")
 
 [node name="Player" type="CharacterBody2D" unique_id=1769892712]
 script = ExtResource("1_mv1ah")
@@ -75,3 +90,81 @@ shape = SubResource("CircleShape2D_ix6vc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Limbs" unique_id=682561499]
 position = Vector2(0, -24)
 shape = SubResource("RectangleShape2D_mv1ah")
+
+[node name="Dialogue" type="Panel" parent="." unique_id=60203914]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -114.5
+offset_right = 329.0
+offset_bottom = 114.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Dialogue" unique_id=1637970661]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "NPC"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Dialogue" unique_id=554397041]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -329.0
+offset_top = 35.0
+offset_right = 329.0
+offset_bottom = 229.0
+grow_horizontal = 2
+text = "Said Things..."
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Minigames" type="Node2D" parent="." unique_id=786954389]
+
+[node name="Firewall" type="Panel" parent="Minigames" unique_id=1424639603]
+visible = false
+z_index = 5
+custom_minimum_size = Vector2(500, 500)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_3uyv8")
+
+[node name="Block" type="TextureButton" parent="Minigames/Firewall" unique_id=1192707480]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = SubResource("NoiseTexture2D_lu8i8")
+
+[node name="ProgressBar" type="ProgressBar" parent="Minigames/Firewall" unique_id=1603568345]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -122.0
+offset_right = 122.0
+offset_bottom = 27.0
+grow_horizontal = 2
+show_percentage = false
+
+[connection signal="visibility_changed" from="Minigames/Firewall" to="Minigames/Firewall" method="_on_visibility_changed"]
