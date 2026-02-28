@@ -2,6 +2,7 @@ extends CharacterBody2D
 class_name Player
 
 @export var speed = 300.0
+@onready var maze = preload("res://Levels/Minigames/maze.tscn")
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
@@ -37,3 +38,8 @@ func _input(_event: InputEvent) -> void:
 						await $Minigames/Alfie.done
 						$Minigames/Alfie.hide()
 						body.queue_free()
+					"Maze":
+						var mazeInst = maze.instantiate()
+						$Minigames.add_child(mazeInst)
+						mazeInst.global_position = global_position - Vector2(100, 100)
+						scale -= Vector2(0, 0.7)

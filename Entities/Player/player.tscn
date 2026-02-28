@@ -107,6 +107,7 @@ shape = SubResource("RectangleShape2D_mv1ah")
 
 [node name="Dialogue" type="Panel" parent="." unique_id=60203914]
 visible = false
+z_index = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

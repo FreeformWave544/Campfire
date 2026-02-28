@@ -1,0 +1,237 @@
+[gd_scene format=3 uid="uid://d2lpja7gg6wvk"]
+
+[ext_resource type="Script" uid="uid://diqmjny8udgn2" path="res://Levels/Minigames/maze.gd" id="1_oy0si"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tekja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tekja"]
+size = Vector2(2337, 65)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5c2io"]
+size = Vector2(65, 992)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wf4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01a4e"]
+size = Vector2(2.6937428, 33.701775)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7a1se"]
+size = Vector2(2.6937428, 33.701775)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lub02"]
+size = Vector2(10.035401, 62.48649)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x1y6q"]
+radius = 200.42206
+
+[sub_resource type="Gradient" id="Gradient_ap3xn"]
+offsets = PackedFloat32Array(0.5522388, 0.9004975)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_iplt1"]
+gradient = SubResource("Gradient_ap3xn")
+width = 192
+height = 192
+fill = 2
+fill_from = Vector2(0, 1)
+
+[node name="Maze" type="Panel" unique_id=253503368]
+top_level = true
+custom_minimum_size = Vector2(2304, 972)
+offset_left = -578.0
+offset_top = -327.0
+offset_right = 1726.0
+offset_bottom = 645.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_tekja")
+script = ExtResource("1_oy0si")
+
+[node name="Walls" type="StaticBody2D" parent="." unique_id=1000221727]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls" unique_id=1777906835]
+position = Vector2(1143.5, -25.5)
+shape = SubResource("RectangleShape2D_tekja")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/CollisionShape2D" unique_id=41889405]
+offset_left = -1154.5
+offset_top = 0.5
+offset_right = 1196.5
+offset_bottom = 40.5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls" unique_id=364025527]
+position = Vector2(1143.5, 985)
+shape = SubResource("RectangleShape2D_tekja")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/CollisionShape2D2" unique_id=384500663]
+offset_left = -1154.5
+offset_top = -33.0
+offset_right = 1196.5
+offset_bottom = 7.0
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls" unique_id=2132277973]
+position = Vector2(11, 486)
+shape = SubResource("RectangleShape2D_5c2io")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/CollisionShape2D3" unique_id=1726076296]
+offset_left = -35.0
+offset_top = -505.0
+offset_right = 37.0
+offset_bottom = 546.0
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls" unique_id=2088693067]
+position = Vector2(2326, 486)
+shape = SubResource("RectangleShape2D_5c2io")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/CollisionShape2D4" unique_id=1784805826]
+offset_left = -35.0
+offset_top = -505.0
+offset_right = 37.0
+offset_bottom = 546.0
+
+[node name="Maze" type="StaticBody2D" parent="Walls" unique_id=1283312273]
+position = Vector2(274, 340)
+scale = Vector2(23.62286, 3.3042588)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze" unique_id=1694690900]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze" unique_id=1513485908]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze2" type="StaticBody2D" parent="Walls" unique_id=1884271545]
+position = Vector2(542.99994, 358.00003)
+scale = Vector2(3.7028599, 21.704256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze2" unique_id=1010527278]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze2" unique_id=167617995]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze3" type="StaticBody2D" parent="Walls" unique_id=874382674]
+position = Vector2(1027, 229.00003)
+scale = Vector2(3.7028599, 21.704256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze3" unique_id=28236433]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze3" unique_id=1828274179]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze4" type="StaticBody2D" parent="Walls" unique_id=1286402026]
+position = Vector2(1713, 642)
+scale = Vector2(3.7028599, 21.704256)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze4" unique_id=2020893265]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze4" unique_id=1206507753]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze5" type="StaticBody2D" parent="Walls" unique_id=1236428999]
+position = Vector2(295, 672.00006)
+scale = Vector2(3.7028599, 14.584257)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze5" unique_id=1622580091]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze5" unique_id=2047603022]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze6" type="StaticBody2D" parent="Walls" unique_id=711085869]
+position = Vector2(1067, 594)
+scale = Vector2(-35.449066, -4.1769066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze6" unique_id=1960918775]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze6" unique_id=1715387477]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze7" type="StaticBody2D" parent="Walls" unique_id=940444768]
+position = Vector2(801, 774)
+scale = Vector2(-35.449066, -4.1769066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze7" unique_id=1887413487]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze7" unique_id=1214080167]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Maze8" type="StaticBody2D" parent="Walls" unique_id=469361894]
+position = Vector2(1937.9999, 192.00006)
+scale = Vector2(-35.449066, -4.1769066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze8" unique_id=280011742]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Walls/Maze8" unique_id=328146544]
+position = Vector2(6.7984824, -170.93988)
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Walls/Maze8" unique_id=712173576]
+position = Vector2(25.80449, -77.71669)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_01a4e")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Walls/Maze8" unique_id=370383478]
+position = Vector2(10.74781, -86.9064)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_7a1se")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Walls/Maze8" unique_id=752998965]
+position = Vector2(16.929276, -38.425533)
+scale = Vector2(0.99999934, 0.99999934)
+shape = SubResource("RectangleShape2D_lub02")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze8" unique_id=2076945002]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+color = Color(0.43529412, 0.48235294, 0.99215686, 1)
+
+[node name="Maze9" type="StaticBody2D" parent="Walls" unique_id=1137243508]
+position = Vector2(1695.0001, 816.99994)
+scale = Vector2(-35.449066, -4.1769066)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Maze9" unique_id=343491886]
+shape = SubResource("RectangleShape2D_4wf4l")
+
+[node name="ColorRect" type="ColorRect" parent="Walls/Maze9" unique_id=1367288443]
+offset_left = -10.0
+offset_top = -10.0
+offset_right = 10.0
+offset_bottom = 10.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1742225451]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1654098380]
+position = Vector2(2213, 912)
+shape = SubResource("CircleShape2D_x1y6q")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D" unique_id=1060059640]
+position = Vector2(2132, 854)
+texture = SubResource("GradientTexture2D_iplt1")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

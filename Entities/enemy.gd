@@ -17,3 +17,6 @@ func _on_area_entered(area: Area2D) -> void:
 		global_position.x = move_toward(global_position.x, global_position.x + move_toward(global_position.x, $"../../".global_position.x, 25), 50)
 		global_position.y = move_toward(global_position.y, global_position.y + move_toward(global_position.y, $"../../".global_position.y, 25), 50)
 		get_parent().mitosis()
+
+# Name name name... Secret Personality?
+# Personality vendetta?

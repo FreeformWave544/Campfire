@@ -89,3 +89,5 @@ text = "Start"
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
 text = "Options"
+
+[connection signal="pressed" from="Panel/ButtonContainer/Start" to="." method="_on_start_pressed"]

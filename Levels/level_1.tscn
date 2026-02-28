@@ -4,12 +4,33 @@
 [ext_resource type="Script" uid="uid://cy70mhx4pyjup" path="res://Entities/NPC/NPCScript.gd" id="2_dilhk"]
 [ext_resource type="Texture2D" uid="uid://qitu1frud42c" path="res://Assets/Alfie.jpg" id="3_3mhv4"]
 [ext_resource type="Texture2D" uid="uid://c8pnd3h7nssdy" path="res://Assets/Will_Kitch.png" id="4_rf6l5"]
+[ext_resource type="Texture2D" uid="uid://cxwskx3hvarv5" path="res://Assets/spencer.png" id="5_syshm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n0qsc"]
 size = Vector2(400, 191)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_syshm"]
 size = Vector2(256, 251)
+
+[sub_resource type="Gradient" id="Gradient_rf6l5"]
+colors = PackedColorArray(0, 0.16470589, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_syshm"]
+noise_type = 2
+fractal_type = 3
+fractal_octaves = 10
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rfktq"]
+width = 1152
+height = 648
+noise = SubResource("FastNoiseLite_syshm")
+color_ramp = SubResource("Gradient_rf6l5")
+seamless = true
+in_3d_space = true
+as_normal_map = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rfktq"]
+size = Vector2(256, 256)
 
 [node name="Level_1" type="Node2D" unique_id=1917194550]
 
@@ -37,7 +58,7 @@ centered = false
 position = Vector2(1154, 508)
 script = ExtResource("2_dilhk")
 displayName = "Will Kitch"
-dialogue = Array[String](["I is good enough to use mic cause I feel bored and like I actually have any authority.", "\"This is just sad\"", "\"What, gender neutral?\""])
+dialogue = Array[String](["\"Who needs kids when you can buy drugs!\"", "\"This is just sad\"", "\"What, gender neutral?\""])
 triggerEvent = "Firewall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Will_K" unique_id=1563956839]
@@ -48,4 +69,30 @@ shape = SubResource("RectangleShape2D_syshm")
 position = Vector2(0, -114.00001)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("4_rf6l5")
+centered = false
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=820834080]
+z_index = -5
+repeat_size = Vector2(1152, 648)
+autoscroll = Vector2(10, 5)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=288767303]
+texture = SubResource("NoiseTexture2D_rfktq")
+centered = false
+
+[node name="Spencer" type="StaticBody2D" parent="." unique_id=1733604999 groups=["Interactable", "NPC"]]
+position = Vector2(990, 1496)
+script = ExtResource("2_dilhk")
+displayName = "Safeguarding (Spencer)"
+dialogue = Array[String](["*Short sounds*"])
+triggerEvent = "Maze"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spencer" unique_id=1201907570]
+position = Vector2(-1, -576)
+shape = SubResource("RectangleShape2D_rfktq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Spencer" unique_id=1638340680]
+position = Vector2(-129, -704)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_syshm")
 centered = false
