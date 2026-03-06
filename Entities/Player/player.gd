@@ -3,8 +3,11 @@ class_name Player
 
 @export var speed = 300.0
 @onready var maze = preload("res://Levels/Minigames/maze.tscn")
+@onready var arrow = $Arrow
 
 func _physics_process(delta: float) -> void:
+	$Arrow.modulate.a = clamp((global_position.distance_to(get_parent().find_child("CompassCentre").global_position) / 1500) - 0.5, 0.0, 1.0)
+	$Arrow.look_at(get_parent().find_child("CompassCentre").global_position)
 	var direction := Input.get_vector("left", "right", "up", "down")
 	if direction.x:
 		velocity.x = direction.x * speed

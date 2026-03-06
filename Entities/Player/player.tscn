@@ -61,6 +61,17 @@ gradient = SubResource("Gradient_5c2io")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="Gradient" id="Gradient_tekja"]
+offsets = PackedFloat32Array(0.13855422, 0.16867469, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5c2io"]
+gradient = SubResource("Gradient_tekja")
+width = 80
+height = 80
+fill = 2
+fill_from = Vector2(1, 0.5)
+
 [node name="Player" type="CharacterBody2D" unique_id=1769892712]
 script = ExtResource("1_mv1ah")
 
@@ -199,6 +210,9 @@ shape = SubResource("CircleShape2D_tekja")
 
 [node name="Sprite2D" type="Sprite2D" parent="Minigames/Alfie/Enemy" unique_id=322983230]
 texture = SubResource("GradientTexture2D_4wf4l")
+
+[node name="Arrow" type="Sprite2D" parent="." unique_id=659347857]
+texture = SubResource("GradientTexture2D_5c2io")
 
 [connection signal="visibility_changed" from="Minigames/Firewall" to="Minigames/Firewall" method="_on_visibility_changed"]
 [connection signal="visibility_changed" from="Minigames/Alfie" to="Minigames/Alfie" method="_on_visibility_changed"]
